@@ -1,6 +1,8 @@
 package routes
 
 import (
+	"lab03/controllers"
+
 	"github.com/gofiber/fiber/v2"
 )
 

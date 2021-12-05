@@ -2,14 +2,14 @@ package controllers
 
 import (
 	"context"
+	"lab03/config"
+	"lab03/models"
 	"log"
 	"math"
 	"strconv"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/mikefmeyer/catchphrase-go-mongodb-rest-api/config"
-	"github.com/mikefmeyer/catchphrase-go-mongodb-rest-api/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -117,6 +117,7 @@ func GetCatchphrase(c *fiber.Ctx) error {
 	})
 }
 
+// Post
 func AddCatchphrase(c *fiber.Ctx) error {
 	catchphraseCollection := config.MI.DB.Collection("catchphrases")
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
